@@ -2,6 +2,8 @@
 
 Six-class image classification at 96×96 RGB: cardboard, glass, metal, paper, plastic, trash.
 
+(Made with help from AI)
+
 ## Dataset setup
 Extract the official public dataset so the structure is:
 ```
