@@ -1,4 +1,4 @@
-ECOSORT QUICK START (Windows / VS Code)
+ECOSORT QUICK START
 ========================================
 
 1. Extract this ZIP.
@@ -22,14 +22,6 @@ ECOSORT QUICK START (Windows / VS Code)
 
 7. Verify:
    python starter_kit/verify_submission.py --model model.onnx --val_dir data/public/val
-
-8. Only proceed if the ONNX checks pass. Note the measured validation accuracy; the hidden test score
-   cannot be guaranteed from public validation accuracy.
-
-9. Create a PUBLIC GitHub repository. Include README.md, starter_kit/, and a text file of your
-   actual results. Do not commit data/ or best_model.pth (they are excluded by .gitignore).
-   If the form separately asks for model.onnx, upload that file directly to the form.
-   Open the form link in starter_kit/README.md and submit only after checking all fields.
 
 Architecture parameters: 91,630 (verified locally from the model definition).
 Model accuracy and ONNX export have NOT been verified in this package.
