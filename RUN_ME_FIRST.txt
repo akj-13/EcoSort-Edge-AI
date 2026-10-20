@@ -1,0 +1,35 @@
+ECOSORT QUICK START (Windows / VS Code)
+========================================
+
+1. Extract this ZIP.
+2. Open the extracted ecosort_submission folder in VS Code.
+3. In Terminal > New Terminal, run:
+   python --version
+   python -m pip install -r starter_kit/requirements.txt
+
+   If PyTorch/torchvision are already installed and you need to save time, run:
+   python -m pip install onnx onnxruntime
+
+4. Dataset is already in data/public/. If missing, place the official ZIP at
+   data/ecosort_dataset_public.zip and run:
+   python starter_kit/download_data.py
+
+5. Train (use workers=0 for Windows reliability):
+   python starter_kit/train_template.py --data_dir data/public --epochs 60 --batch_size 32 --lr 0.001 --workers 0 --output model.onnx
+
+6. Wait until the script finishes and creates model.onnx. Training may take several minutes.
+   Do not close the terminal. Look for the best validation accuracy in the output.
+
+7. Verify:
+   python starter_kit/verify_submission.py --model model.onnx --val_dir data/public/val
+
+8. Only proceed if the ONNX checks pass. Note the measured validation accuracy; the hidden test score
+   cannot be guaranteed from public validation accuracy.
+
+9. Create a PUBLIC GitHub repository. Include README.md, starter_kit/, and a text file of your
+   actual results. Do not commit data/ or best_model.pth (they are excluded by .gitignore).
+   If the form separately asks for model.onnx, upload that file directly to the form.
+   Open the form link in starter_kit/README.md and submit only after checking all fields.
+
+Architecture parameters: 91,630 (verified locally from the model definition).
+Model accuracy and ONNX export have NOT been verified in this package.
